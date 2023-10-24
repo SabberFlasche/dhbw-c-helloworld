@@ -17,17 +17,22 @@ void printLine(int treeHeight, int lineNum) {
     free(ptr);
 }
 
-int main(int argc, char const *argv[]) {
-    int height;
-
-    printf("Enter Tree Height: ");
-    scanf("%i", &height);
-
+void printTree(int height) {
     for (int i = 0; i < height; i++) {
         printLine(height, i);
     }
     
     printf("%*s\n", height, "|");
     printf("%*s\n", height, "|");
+}
+
+int main(int argc, char const *argv[]) {
+    int height;
+
+    //printf("Enter Tree Height: ");
+    fputs("Enter Tree Height: ", stdout);
+    scanf("%i", &height);
+
+    printTree(height);
     return 0;
 }
